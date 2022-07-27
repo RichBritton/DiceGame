@@ -117,7 +117,7 @@ function diceRollCoolDown()
 
     let rollFail = false;
     let hasWon = false;
-    let winValue = 10;
+    let winValue = 20;
     if(diceNum==1 || diceNum==2) rollFail=true;
 
     if (!rollFail)
