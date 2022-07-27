@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>dice game</title>
+</head>
+<body>
+
+    <div class = "game">
+
+        <div id = "playerBox" class = "player box">
+            <div class = "banner"><div class = "bName">PLAYER</div><img id = "playerCrown" src="images/crownIcon.png"></div>
+
+            <div class = "scoreInfo">
+                <div id = "playerHeldValue">Held: 0</div>
+                <div id = "playerWins">Wins: 0</div>
+            </div>
+
+            <div id="playerScore" class = "score">0</div>
+        </div>
+
+        <div id = "dice">
+            <img id="dots" src="images/d6.png">
+            <button id = "hold">HOLD</button>
+        </div>
+
+        <div id = "aiBox" class = "ai box">
+            <div class = "banner"><div class = "bName">AI</div><img id = "aiCrown" src="images/crownIcon.png"></div>
+            
+            <div class = "scoreInfo">
+                <div id = "aiHeldValue">Held: 0</div>
+                <div id = "aiWins">Wins: 0</div>
+            </div>
+
+            <div id="aiScore" class = "score">0</div>
+        </div>
+
+    </div>
+
+
+    <div id = winScreen>
+        <div id = "winText">PLAYER WINS</div>
+        <button id = "newGame">NEW GAME</button>
+    </div>
+
+
+
+    <script src="script.js"></script> 
+</body>
+</html>

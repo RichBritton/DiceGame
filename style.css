@@ -1,0 +1,180 @@
+
+
+
+*
+{
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body
+{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    user-select: none;
+}
+
+
+
+.game
+{
+    background-color: rgb(241, 241, 241);
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+.box
+{
+    background-color: rgb(19, 19, 19);
+    width: 30%;
+    height:60%;
+}
+
+.banner
+{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    background-color: rgb(187, 66, 66);
+    justify-content:center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.bName
+{
+    padding-left: 14%;
+}
+
+.score
+{
+    color: rgb(235, 235, 235);
+    font-size: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85%;
+}
+
+#dice
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#hold,#newGame
+{
+    margin-top: 50px;
+    width: 230px;
+    height: 70px;
+    border-style: none;
+    background-color: rgb(90, 197, 90);
+    color: white;
+    font-size: 30px;
+    border-radius: 7px;
+}
+
+#hold:hover,#newGame:hover
+{
+    scale:1.05;
+}
+
+.scoreInfo
+{
+    color: white;
+    display:flex;
+    flex-direction: row;
+    padding-top:5px;
+    font-size: 20px;
+    justify-content:space-between;
+}
+
+#playerHeldValue,#aiHeldValue,#playerWins,#aiWins
+{
+    padding-left:30px;
+    padding-right:30px;
+}
+
+
+#playerBox
+{
+    scale:1.1;
+}
+#aiBox
+{
+    scale:1;
+}
+
+
+#winScreen
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height:100vh;
+    background-color: rgba(255, 255, 255, 0.952);
+
+    font-size: 70px;
+    color: rgb(163, 36, 36);
+    font-weight: 700;
+    visibility: hidden;
+}
+
+#playerCrown,#aiCrown
+{
+    height:80%;
+    visibility: hidden;
+    padding:0;
+    margin:0;
+    border:0;
+}
+
+
+#newGame
+{
+    margin-top: 300px;
+}
+#winText
+{
+    margin-top: 150px;
+}
+
+
+:root
+{
+    --diceAng: 0deg;
+    --prevDiceAng: 0deg;
+}
+
+@keyframes spin
+{
+    0%
+    {
+        transform: rotate(var(--prevDiceAng));
+    }
+    100%
+    {
+        transform: rotate(var(--diceAng));
+    }
+}
+
+
+@keyframes resetSpin
+{
+    100%
+    {
+        transform: rotate(var(--prevDiceAng));
+    }
+}
