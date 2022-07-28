@@ -15,12 +15,21 @@ let aiWins=0;
 let remainingAiTurns = 3;
 
 
+
+
 document.getElementById("dots").setAttribute('draggable', false);
 document.getElementById("dots").addEventListener("click",rollDice);
 document.getElementById("hold").addEventListener("click", hold);
 document.getElementById("newGame").addEventListener("click", newGame);
+document.getElementById("ok").addEventListener("click", hideHowTo);
+document.getElementById("howToTrigger").addEventListener("click", showHowTo);
 
 
+enableHoldButton(false);
+
+
+
+newGame();
 
 
 function newGame()
@@ -41,8 +50,45 @@ function newGame()
     document.getElementById("playerScore").textContent=playerScore;
     document.getElementById("aiScore").textContent=aiScore;
 
+    document.getElementById("playerBox").style.color=null;
+    document.getElementById("aiBox").style.color="rgb(90,90,90)";
+
+    document.getElementById("playerBanner").style.backgroundColor = null;
+    document.getElementById("aiBanner").style.backgroundColor = "rgb(50,50,50)";
+
+    enableHoldButton(false);
+
     document.getElementById("winScreen").style.visibility = "hidden";
 }
+
+
+
+function enableHoldButton(enable)
+{
+    if (enable == false) 
+    {
+        document.getElementById("hold").style.scale = 1;
+        document.getElementById("hold").style.backgroundColor = "rgb(112, 112, 112)";
+        document.getElementById("hold").style.color = "rgb(151, 151, 151)";
+    }
+    else
+    {
+        document.getElementById("hold").style.scale = null;
+        document.getElementById("hold").style.backgroundColor = null;
+        document.getElementById("hold").style.color = null;
+    }
+}
+
+
+function showHowTo()
+{
+    document.getElementById("howTo").style.visibility = "visible";
+}
+function hideHowTo()
+{
+    document.getElementById("howTo").style.visibility = "hidden";
+}
+
 
 
 function triggerAiRoll()
@@ -64,7 +110,7 @@ function triggerAiRoll()
 
 function hold()
 {
-    if (allowDiceRoll)
+    if (allowDiceRoll && (!playerTurn || (playerTurn && playerScore>playerScoreHeld)))
     {
         if (playerTurn) 
         {
@@ -100,7 +146,7 @@ function rollDice()
 
         for (let i = 0; i < rng; i++)
         {
-            setTimeout(dicePlusOne, 200*i);
+            setTimeout(dicePlusOne, 180*i);
         }
 
         allowDiceRoll=false;
@@ -126,6 +172,8 @@ function diceRollCoolDown()
         {
             playerScore+=(diceNum);
             if (playerScore>=winValue) hasWon=true;
+
+            enableHoldButton(true);
         }
         else
         {
@@ -192,6 +240,12 @@ function swapTurns()
     {
         document.getElementById("playerBox").style.scale=1.1;
         document.getElementById("aiBox").style.scale=1;
+
+        document.getElementById("playerBox").style.color=null;
+        document.getElementById("aiBox").style.color="rgb(90,90,90)";
+
+        document.getElementById("playerBanner").style.backgroundColor = null;
+        document.getElementById("aiBanner").style.backgroundColor = "rgb(50,50,50)";
     }
     else
     {
@@ -199,7 +253,15 @@ function swapTurns()
 
         document.getElementById("playerBox").style.scale=1;
         document.getElementById("aiBox").style.scale=1.1;
+
+        document.getElementById("playerBox").style.color="rgb(90,90,90)";
+        document.getElementById("aiBox").style.color=null;
+
+        document.getElementById("playerBanner").style.backgroundColor = "rgb(50,50,50)";
+        document.getElementById("aiBanner").style.backgroundColor = null;
     }
+
+    enableHoldButton(false);
 }
 
 

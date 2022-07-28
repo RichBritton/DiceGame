@@ -33,9 +33,11 @@ body
     background-color: rgb(19, 19, 19);
     width: 30%;
     height:60%;
+    border-radius: 35px;
+    color: white;
 }
 
-.banner
+#playerBanner,#aiBanner
 {
     display: flex;
     width: 100%;
@@ -43,7 +45,6 @@ body
     background-color: rgb(187, 66, 66);
     justify-content:center;
     align-items: center;
-    color: white;
     font-size: 30px;
     font-weight: 600;
 }
@@ -71,7 +72,7 @@ body
     flex-direction: column;
 }
 
-#hold,#newGame
+#hold,#newGame,#ok
 {
     margin-top: 50px;
     width: 230px;
@@ -82,15 +83,18 @@ body
     font-size: 30px;
     border-radius: 7px;
 }
+#hold
+{
+    background-color: rgb(90, 197, 90);
+}
 
-#hold:hover,#newGame:hover
+#hold:hover,#newGame:hover,#ok:hover
 {
     scale:1.05;
 }
 
 .scoreInfo
 {
-    color: white;
     display:flex;
     flex-direction: row;
     padding-top:5px;
@@ -115,7 +119,7 @@ body
 }
 
 
-#winScreen
+#winScreen,#howTo
 {
     position: absolute;
     display: flex;
@@ -136,7 +140,7 @@ body
 {
     height:80%;
     visibility: hidden;
-    padding:0;
+    padding:0 0 16px 0;
     margin:0;
     border:0;
 }
@@ -149,6 +153,40 @@ body
 #winText
 {
     margin-top: 150px;
+}
+
+
+
+#howTo
+{
+    justify-content: flex-start;
+    visibility: visible;
+    background-color: rgba(255, 255, 255, 0.97);
+}
+#howToText
+{
+    padding-top: 10%;
+    justify-content: center;
+    width:500px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#howToTrigger
+{
+    position: absolute;
+    left: 10px;
+    top:10px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: rgb(102, 102, 102);
+    font-size: 24px;
+}
+
+#howToTrigger:hover
+{
+    scale:1.1;
+    color:black;
 }
 
 

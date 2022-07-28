@@ -10,9 +10,10 @@
 <body>
 
     <div class = "game">
+        <div id = "howToTrigger">How to play</div>
 
         <div id = "playerBox" class = "player box">
-            <div class = "banner"><div class = "bName">PLAYER</div><img id = "playerCrown" src="images/crownIcon.png"></div>
+            <div id = "playerBanner"><div class = "bName">PLAYER</div><img id = "playerCrown" src="images/crownIcon.png"></div>
 
             <div class = "scoreInfo">
                 <div id = "playerHeldValue">Held: 0</div>
@@ -28,7 +29,7 @@
         </div>
 
         <div id = "aiBox" class = "ai box">
-            <div class = "banner"><div class = "bName">AI</div><img id = "aiCrown" src="images/crownIcon.png"></div>
+            <div id = "aiBanner"><div class = "bName">AI</div><img id = "aiCrown" src="images/crownIcon.png"></div>
             
             <div class = "scoreInfo">
                 <div id = "aiHeldValue">Held: 0</div>
@@ -41,9 +42,19 @@
     </div>
 
 
+
     <div id = winScreen>
         <div id = "winText">PLAYER WINS</div>
         <button id = "newGame">NEW GAME</button>
+    </div>
+
+    <div id = "howTo">
+        <div id = howToText>
+            Roll the dice  as many times as you like, reach <b>20</b> before the AI does.<br><br>
+            If you roll a <b>1 or 2</b>, you will lose your points.<br><br>
+            Prevent your points from being lost by pressing <b>hold</b> and ending your turn.
+        </div>
+        <button id = "ok">OK</button>
     </div>
 
 
